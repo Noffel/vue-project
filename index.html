@@ -9,6 +9,7 @@
 		<h1>{{ message }}</h1>
 		<h2> Full Name: {{ getFullName(firstName, lastName).name }}</h3>
 		<h3> Age Category: {{ age < 20 ? 'Teenager' : 'Adult' }}</h1>
+		<a v-bind:href="linkedIn">LinkedIn profile link</a>
 		
 	</div>
 
@@ -19,7 +20,8 @@
 			data: {
 				firstName: 'Noffel',
 				lastName: 'Khan',
-				age: 24
+				age: 24,
+				linkedIn: 'https://www.linkedin.com/in/noffel/'
 			},
 			methods: {
 				getFullName: function(firstName, lastName) {
