@@ -7,6 +7,9 @@
 <body>
 	<div id="app">
 		<h1>{{ message }}</h1>
+		<h2> Full Name: {{ getFullName(firstName, lastName).name }}</h3>
+		<h3> Age Category: {{ age < 20 ? 'Teenager' : 'Adult' }}</h1>
+		
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -14,9 +17,19 @@
 		new Vue({
 			el:'#app',
 			data: {
-				message: 'Hello World!'
+				firstName: 'Noffel',
+				lastName: 'Khan',
+				age: 24
+			},
+			methods: {
+				getFullName: function(firstName, lastName) {
+					return {
+						name: firstName + ' ' + lastName,
+						};
+				}
 			}
-		});
+
+				});
 	</script>
 
 </body>
