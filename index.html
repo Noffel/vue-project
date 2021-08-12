@@ -10,10 +10,10 @@
 		<h2> Full Name: {{ getFullName(firstName, lastName).name }}</h3>
 		<h3> Age Category: {{ age < 20 ? 'Teenager' : 'Adult' }}</h1>
 		<a v-bind:href="linkedIn">LinkedIn profile link</a>
-		<br>
-		<input type="text" v-on:keyup.enter.space="pressedKey">
-		<br>
-		<button v-on:click.once="showDialog">Submit</button>
+		<br><br>
+		<input type="text" v-on:keyup.shift.enter="pressedKey">
+		<br><br>
+		<button v-on:click.shift="showDialog">Submit</button>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -33,10 +33,10 @@
 						};
 				},
 				showDialog: function(){
-					alert("Hello World!");
+					alert("You clicked a button!");
 				},
 				pressedKey: function(){
-					alert("You pressed the enter or space key..")
+					alert("You pressed Shift + Enter key..")
 				}
 			}
 
