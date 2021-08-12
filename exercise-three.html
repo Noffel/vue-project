@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercise 2</title>
+</head>
+<body>
+
+	<div id="app">
+		<h1>Enter full name</h1>
+		<input type="text" v-on:keyup.ctrl.enter="fullName = $event.target.value">
+		<br><br>
+		Full name: {{ fullName }}
+		<br><br>
+		<button v-on:click="showFullName">Submit</button>
+
+		<!-- event.preventDefault() - prevents the default behaviour of the browser to refresh the page upon clicking submit button.
+		 For example when sending an AJAX request upon submitting form without refreshing the page--> 
+		<form action="" method="GET" v-on:submit.prevent>
+			<input type="submit" value="Submit">
+		</form>
+
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			data: {
+				fullName: '',
+			},
+			methods: {
+				showFullName: function(){
+					alert(this.fullName);
+				},
+
+			}
+
+				});
+	</script>
+
+
+
+</body>
+</html>
