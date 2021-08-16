@@ -6,9 +6,23 @@
 </head>
 <body>
 	<div id="app">
-		<input type="text" v-model.number.lazy="age">
-		<p>You entered: {{ age }}</p>
-		<p>Type: {{ typeof age }}</p>	
+
+		<table border ="1">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Title</th>
+					<th>Company</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="employee in employees">
+					<td>{{ employee.name }}</td>
+					<td>{{ employee.title }}</td>
+					<td>{{ companyName }} </td>
+				</tr>
+			</tbody>
+		</table>
 
 	</div>
 
@@ -17,8 +31,13 @@
 		new Vue({
 			el:'#app',
 			data: {
-				age: 25
-
+				age: 25,
+				employees: [
+					{name: 'Madis', title: 'CTO'},
+					{name: 'Marilin', title: 'COO'},
+					{name: 'Noffel', title: 'Developer'},
+				 ],
+				 companyName: 'Singularity Creations',
 				
 			},
 			methods: {
